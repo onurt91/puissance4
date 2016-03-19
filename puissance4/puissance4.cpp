@@ -2,7 +2,40 @@
 
 Puissance4::Puissance4()
 {
+    scoreJ1 = 0;
+    scoreJ2 = 0;
+    joueurActuel = 1; //Pour le moment, apres on pourra config
+}
 
+void Puissance4::resetPartie()
+{
+
+}
+
+void Puissance4::resetScore()
+{
+    scoreJ1 = 0;
+    scoreJ2 = 0;
+}
+
+void Puissance4::augmenterScore(int gagant)
+{
+
+}
+
+int Puissance4::getJoueurActuel()
+{
+
+}
+
+int Puissance4::getScoreJ1()
+{
+    return scoreJ1;
+}
+
+int Puissance4::getScoreJ2()
+{
+    return scoreJ2;
 }
 
 void Puissance4::jouer(int x, int y)

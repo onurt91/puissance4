@@ -14,9 +14,9 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         fenetre.cpp \
-    casesDejaJouees.cpp \
-    detectionFinPartie.cpp
+    puissance4.cpp
 
-HEADERS  += fenetre.h
+HEADERS  += fenetre.h \
+    puissance4.h
 
 FORMS    += fenetre.ui
