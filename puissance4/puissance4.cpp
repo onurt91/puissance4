@@ -91,7 +91,7 @@ int Puissance4::detectionFinDePartie()
         }
     }
 
-    //On test les diagonnales
+    //On test les diagonnales de gauche(bas) à droite(haut).
     if (grille[0][2] == grille[1][3] && grille[1][3] == grille[2][4] && grille[2][4] == grille[3][5] && grille[0][3] != 0)
     {
         return grille[0][3];
@@ -125,9 +125,39 @@ int Puissance4::detectionFinDePartie()
         }
     }
 
-    //************************************//
-    //Rajouter les diago dans l'autre sens//
-    //************************************//
+    //On test les diagonnales de droite(haut) à gauche(bas).
+    if (grille[0][3] == grille[1][2] && grille[1][2] == grille[2][1] && grille[2][1] == grille[3][0] && grille[0][3] != 0)
+    {
+        return grille[0][3];
+    }
+    if (grille[3][5] == grille[4][4] && grille[4][1] == grille[5][3] && grille[5][3] == grille[6][2] && grille[3][0] != 0)
+    {
+        return grille[3][0];
+    }
+    for (int i = 0; i < 2; ++i)
+    {
+        if (grille[0+i][1+i] == grille[1+i][2+i] && grille[1+i][2+i] == grille[2+i][3+i]
+                && grille[2+i][3+i] == grille[3+i][4+i] && grille[3+i][4+i] == grille[4+i][5+i] && grille[2][3] != 0)
+        {
+            return grille[2][3];
+        }
+    }
+    for (int i = 0; i < 3; ++i)
+    {
+        if (grille[0+i][0+i] == grille[1+i][1+i] && grille[1+i][1+i] == grille[2+i][2+i]
+                && grille[2+i][2+i] == grille[3+i][3+i] && grille[3+i][3+i] == grille[4+i][4+i] && grille[3][3] != 0)
+        {
+            return grille[3][3];
+        }
+    }
+    for (int i = 0; i < 4; ++i)
+    {
+        if (grille[2+i][0+i] == grille[3+i][1+i] && grille[3+i][1+i] == grille[4+i][2+i]
+                && grille[4+i][2+i] == grille[5+i][3+i] && grille[5+i][3+i] == grille[6+i][4+i] && grille[4][2] != 0)
+        {
+            return grille[4][2];
+        }
+    }
 
     return 0;
 }
